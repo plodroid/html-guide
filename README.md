@@ -1,50 +1,62 @@
-# HTML Quest
+# HTML Guide
 
-A beginner-first coding game for learning HTML by actually writing it.
+A beginner-first interactive course for learning HTML by actually writing it.
 
-HTML Quest keeps the clean, restrained feel of an Apple product page, then adds meaningful game progression underneath it: missions, real code challenges, XP, levels, streaks, unlockable worlds, collectible pins, Quickfire rounds, an arena, a playground, hidden quests, and a final build.
+The site is designed to feel closer to an Apple product/learning experience than a generic gamified dashboard: editorial typography, lots of whitespace, restrained motion, mostly solid surfaces, and Liquid Glass reserved for controls where the material actually makes sense.
 
-## What makes it a game
+## Learning loop
 
-- Mission map with locked/unlocked progression
-- 8 HTML missions ending in an HTML boss
-- Unlockable CSS and JavaScript worlds
-- Real code validators instead of “click next” lessons
-- XP and levels
-- One-time mission rewards
-- Daily mission progress and streaks
-- Challenge Arena with combo multipliers
-- 60-second-style Quickfire questions
-- Collectible achievement pins
-- Hidden playground quest
-- Final Boss that validates a real page structure
-- Confetti and level-up feedback kept intentionally restrained
-- Learner nickname/profile
-- Progress stored locally in the browser
-
-## Learning approach
-
-Each mission follows the same loop:
+Each mission keeps the same simple rhythm:
 
 1. Learn one small idea.
 2. See a tiny real example.
-3. Edit code yourself.
-4. Get instant validation and a useful hint if needed.
-5. Earn progression only when the code actually satisfies the task.
+3. Change real code yourself.
+4. Get immediate validation and an optional hint.
+5. Unlock the next step only after the code satisfies the task.
 
-The course is written for anyone starting from zero. It does not assume prior coding knowledge or require AI-generated code to understand the lessons.
+The curriculum currently contains 19 main missions across HTML, CSS, and JavaScript, plus a final build.
 
-## Design
+## Progress
 
-The interface is Apple-inspired rather than “generic game UI”:
+Course completion is calculated from the XP value of curriculum missions the learner has actually completed:
 
-- large editorial typography
-- lots of whitespace
-- mostly neutral surfaces
-- restrained blue/purple accents
-- liquid glass used mainly for navigation and transient controls
-- smooth but subtle motion
-- no giant neon gradients or cluttered HUD everywhere
+```text
+completed curriculum XP / total curriculum XP = course progress %
+```
+
+Side activities can award **bonus XP** for levels and feedback, but bonus XP does not increase the course-completion percentage. This keeps the progress meter honest.
+
+Progress, nickname, streaks, achievements, and activity state are stored locally in the browser with `localStorage`. The site does **not** track visitor IP addresses.
+
+## Liquid Glass
+
+The interface uses a restrained Liquid Glass system adapted from the supplied reference template:
+
+- SVG distortion/displacement filters
+- layered translucent material
+- specular edge highlights
+- compressed/stretched press states
+- a glass lens thumb for course progress
+- glass mainly on navigation, segmented controls, transient UI, and compact controls
+
+Content areas themselves remain mostly solid so the material does not overwhelm the learning experience.
+
+The effect degrades gracefully where advanced SVG/backdrop filter combinations are not supported.
+
+## Features
+
+- locked/unlocked mission progression
+- real code validators
+- HTML, CSS and JavaScript worlds
+- boss missions and a final build
+- XP and levels
+- XP-weighted course progress
+- daily learning goal and streak
+- practice arena with combos
+- Quickfire recognition practice
+- achievement milestones
+- hidden playground challenge
+- editable HTML/CSS playground with live preview
 - responsive mobile layout
 - reduced-motion support
 
@@ -54,15 +66,24 @@ The interface is Apple-inspired rather than “generic game UI”:
 html-guide/
 ├─ index.html
 ├─ style.css
+├─ base.css
+├─ components.css
+├─ dialogs.css
 ├─ script.js
+├─ curriculum.js
+├─ progress.js
+├─ activities.js
+├─ app.js
 └─ README.md
 ```
 
-There is deliberately **no framework, package manager, build step, backend, or GitHub Actions workflow**. It is plain static HTML/CSS/JavaScript.
+The files are intentionally split into understandable pieces instead of one enormous generated stylesheet or script.
+
+There is deliberately **no framework, npm dependency, package manager, build step, backend, or GitHub Actions workflow**. It is plain static HTML/CSS/JavaScript.
 
 ## Run locally
 
-Open `index.html` in a browser.
+Open `index.html` in a browser or serve the folder with any basic static-file server.
 
 ## GitHub Pages
 
