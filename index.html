@@ -1,0 +1,444 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="HTML Guide — learn how websites work from absolute zero, with interactive examples and a live playground.">
+  <meta name="theme-color" content="#f5f5f7">
+  <title>HTML Guide — Learn from zero</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to lessons</a>
+
+  <header class="topbar" id="topbar">
+    <nav class="topbar-inner" aria-label="Primary navigation">
+      <a class="brand" href="#top" aria-label="HTML Guide home">
+        <span class="brand-mark" aria-hidden="true">&lt;/&gt;</span>
+        <span>HTML Guide</span>
+      </a>
+
+      <div class="desktop-nav" aria-label="Sections">
+        <a href="#learn">Learn</a>
+        <a href="#playground">Playground</a>
+        <a href="#project">Project</a>
+      </div>
+
+      <div class="nav-actions">
+        <button class="icon-button search-button" id="openSearch" type="button" aria-label="Search lessons" title="Search lessons (Ctrl/⌘ K)">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m21 21-4.35-4.35m2.35-5.65a8 8 0 1 1-16 0 8 8 0 0 1 16 0Z"/></svg>
+        </button>
+        <button class="icon-button" id="themeToggle" type="button" aria-label="Toggle appearance" title="Toggle appearance">
+          <svg class="sun-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg>
+          <svg class="moon-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.3A8.5 8.5 0 0 1 9.7 3.5 8.5 8.5 0 1 0 20.5 14.3Z"/></svg>
+        </button>
+        <button class="menu-button" id="menuButton" type="button" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span>
+        </button>
+      </div>
+    </nav>
+    <div class="progress-line" aria-hidden="true"><span id="pageProgress"></span></div>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <a href="#learn">Learn</a>
+    <a href="#playground">Playground</a>
+    <a href="#project">Project</a>
+  </div>
+
+  <main id="main">
+    <section class="hero section-shell" id="top">
+      <div class="hero-glow glow-one" aria-hidden="true"></div>
+      <div class="hero-glow glow-two" aria-hidden="true"></div>
+      <p class="eyebrow reveal">HTML Guide</p>
+      <h1 class="hero-title reveal">Coding starts<br><span>right here.</span></h1>
+      <p class="hero-copy reveal">No coding experience. No problem. Learn what AI has been writing for you, one tiny idea at a time — then edit it yourself and watch the page change.</p>
+      <div class="hero-actions reveal">
+        <a class="button button-primary" href="#learn">Start learning <span aria-hidden="true">↓</span></a>
+        <a class="button button-secondary glass-control" href="#playground">Open playground</a>
+      </div>
+      <div class="hero-demo reveal" aria-label="Animated HTML example">
+        <div class="demo-window">
+          <div class="window-bar"><span></span><span></span><span></span><p>index.html</p></div>
+          <pre aria-label="Example HTML"><code><span class="token-punct">&lt;</span><span class="token-tag">h1</span><span class="token-punct">&gt;</span>Hello, world!<span class="token-punct">&lt;/</span><span class="token-tag">h1</span><span class="token-punct">&gt;</span>
+<span class="token-punct">&lt;</span><span class="token-tag">p</span><span class="token-punct">&gt;</span>I made this.<span class="token-punct">&lt;/</span><span class="token-tag">p</span><span class="token-punct">&gt;</span></code></pre>
+        </div>
+        <div class="demo-result" aria-hidden="true">
+          <span class="result-label">Browser</span>
+          <h2>Hello, world!</h2>
+          <p>I made this.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="intro-strip" aria-label="The three web technologies">
+      <div class="section-shell trio-grid">
+        <article class="trio-item reveal"><span class="number">01</span><h2>HTML</h2><p>What exists.</p></article>
+        <article class="trio-item reveal"><span class="number">02</span><h2>CSS</h2><p>How it looks.</p></article>
+        <article class="trio-item reveal"><span class="number">03</span><h2>JavaScript</h2><p>What it does.</p></article>
+      </div>
+    </section>
+
+    <section class="learning-layout section-shell" id="learn">
+      <aside class="lesson-sidebar glass-control" aria-label="Lesson navigation">
+        <div class="sidebar-title">Learn</div>
+        <a class="lesson-link active" href="#lesson-0"><span>0</span>Start here</a>
+        <a class="lesson-link" href="#lesson-1"><span>1</span>Tags</a>
+        <a class="lesson-link" href="#lesson-2"><span>2</span>Text & links</a>
+        <a class="lesson-link" href="#lesson-3"><span>3</span>Nesting</a>
+        <a class="lesson-link" href="#lesson-4"><span>4</span>Classes & IDs</a>
+        <a class="lesson-link" href="#lesson-5"><span>5</span>Forms</a>
+        <a class="lesson-link" href="#lesson-6"><span>6</span>Add CSS</a>
+        <a class="lesson-link" href="#lesson-7"><span>7</span>Add JavaScript</a>
+        <a class="lesson-link" href="#lesson-8"><span>8</span>Debug</a>
+      </aside>
+
+      <div class="lesson-content">
+        <div class="chapter-heading reveal">
+          <p class="eyebrow">Learn by touching the code</p>
+          <h2>Nothing is magic anymore.</h2>
+          <p>Every lesson has a tiny example, a plain-English explanation, and a button to run it. Read less. Change more.</p>
+        </div>
+
+        <article class="lesson reveal" id="lesson-0" data-search-title="Start here website files html css javascript index.html">
+          <div class="lesson-number">00</div>
+          <div class="lesson-copy">
+            <p class="lesson-kicker">The idea</p>
+            <h3>A website is just files.</h3>
+            <p>Your browser reads files and turns them into the page you see. For a basic website, you normally start with three:</p>
+            <div class="file-stack" aria-label="Website files">
+              <div><span class="file-icon html">&lt;&gt;</span><strong>index.html</strong><small>The content and structure</small></div>
+              <div><span class="file-icon css">#</span><strong>style.css</strong><small>Colors, spacing, layout</small></div>
+              <div><span class="file-icon js">{ }</span><strong>script.js</strong><small>Clicks and behavior</small></div>
+            </div>
+            <div class="plain-note"><strong>For now:</strong> focus on <code>index.html</code>. You can make a real webpage with that one file.</div>
+          </div>
+        </article>
+
+        <article class="lesson reveal" id="lesson-1" data-search-title="Tags opening closing elements h1 p button html syntax">
+          <div class="lesson-number">01</div>
+          <div class="lesson-copy">
+            <p class="lesson-kicker">The building block</p>
+            <h3>HTML is made of tags.</h3>
+            <p>A tag tells the browser what something <em>is</em>. Most have an opening tag, some content, and a closing tag.</p>
+            <div class="anatomy-card">
+              <button class="anatomy-part" data-tip="Opening tag: starts the heading element.">&lt;h1&gt;</button>
+              <button class="anatomy-part content" data-tip="Content: this is what the visitor reads.">Hello</button>
+              <button class="anatomy-part" data-tip="Closing tag: the slash / tells the browser the element ends here.">&lt;/h1&gt;</button>
+              <p id="anatomyTip">Tap any part to see what it means.</p>
+            </div>
+            <div class="code-card" data-example="tags">
+              <div class="code-toolbar"><span>HTML</span><button class="copy-code" type="button">Copy</button></div>
+              <pre><code>&lt;h1&gt;My first website&lt;/h1&gt;
+&lt;p&gt;I finally understand this.&lt;/p&gt;
+&lt;button&gt;Click me&lt;/button&gt;</code></pre>
+              <button class="run-example" type="button">Run example <span>↗</span></button>
+            </div>
+            <div class="result-explanation"><span>Translation</span><p>Make one main heading, one paragraph, then one button. That's it.</p></div>
+          </div>
+        </article>
+
+        <article class="lesson reveal" id="lesson-2" data-search-title="Headings paragraphs strong em links anchor href images img src alt">
+          <div class="lesson-number">02</div>
+          <div class="lesson-copy">
+            <p class="lesson-kicker">Content</p>
+            <h3>Put real things on the page.</h3>
+            <p>These are the tags you'll use constantly. You do not need to memorize 100 tags — start with the useful ones.</p>
+            <div class="tag-grid">
+              <button class="tag-chip" data-tag="&lt;h1&gt;" data-description="Your main page heading. Usually use one main h1 per page."><code>&lt;h1&gt;</code><span>Heading</span></button>
+              <button class="tag-chip" data-tag="&lt;p&gt;" data-description="A paragraph of normal text."><code>&lt;p&gt;</code><span>Paragraph</span></button>
+              <button class="tag-chip" data-tag="&lt;a&gt;" data-description="A link. The href attribute tells it where to go."><code>&lt;a&gt;</code><span>Link</span></button>
+              <button class="tag-chip" data-tag="&lt;img&gt;" data-description="An image. src points to the image file; alt describes it."><code>&lt;img&gt;</code><span>Image</span></button>
+              <button class="tag-chip" data-tag="&lt;button&gt;" data-description="A real clickable button. JavaScript can give it behavior later."><code>&lt;button&gt;</code><span>Button</span></button>
+              <button class="tag-chip" data-tag="&lt;strong&gt;" data-description="Marks text as strongly important; browsers normally display it bold."><code>&lt;strong&gt;</code><span>Important</span></button>
+            </div>
+            <div class="tag-detail" id="tagDetail"><strong>&lt;h1&gt;</strong><p>Your main page heading. Usually use one main h1 per page.</p></div>
+            <div class="code-card" data-example="content">
+              <div class="code-toolbar"><span>HTML</span><button class="copy-code" type="button">Copy</button></div>
+              <pre><code>&lt;h1&gt;Plexium&lt;/h1&gt;
+&lt;p&gt;A project I'm building while I learn.&lt;/p&gt;
+&lt;a href="https://github.com"&gt;Open GitHub&lt;/a&gt;</code></pre>
+              <button class="run-example" type="button">Run example <span>↗</span></button>
+            </div>
+            <div class="attribute-callout">
+              <code>href="https://github.com"</code>
+              <div><strong>This is an attribute.</strong><p>Attributes add extra information to a tag. Here, <code>href</code> tells the link where to go.</p></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="lesson reveal" id="lesson-3" data-search-title="Nesting parent child div section structure indentation container">
+          <div class="lesson-number">03</div>
+          <div class="lesson-copy">
+            <p class="lesson-kicker">Structure</p>
+            <h3>Things can live inside other things.</h3>
+            <p>This is called <strong>nesting</strong>. Think folders inside folders. Indentation lets your eyes see who belongs to who.</p>
+            <div class="nesting-demo">
+              <div class="nest parent"><span>div.card</span>
+                <div class="nest child"><span>h2</span>MacBook Pro</div>
+                <div class="nest child"><span>p</span>A laptop card.</div>
+                <div class="nest child"><span>button</span>View</div>
+              </div>
+            </div>
+            <div class="code-card" data-example="nesting">
+              <div class="code-toolbar"><span>HTML</span><button class="copy-code" type="button">Copy</button></div>
+              <pre><code>&lt;div class="card"&gt;
+  &lt;h2&gt;MacBook Pro&lt;/h2&gt;
+  &lt;p&gt;A laptop card.&lt;/p&gt;
+  &lt;button&gt;View&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+              <button class="run-example" type="button">Run example <span>↗</span></button>
+            </div>
+            <div class="plain-note"><strong>Shortcut:</strong> when AI gives you a huge file, look for the outer containers first. Header → main → section → card. The code gets way less scary.</div>
+          </div>
+        </article>
+
+        <article class="lesson reveal" id="lesson-4" data-search-title="class id css selector dot hash reusable unique">
+          <div class="lesson-number">04</div>
+          <div class="lesson-copy">
+            <p class="lesson-kicker">Names</p>
+            <h3>Classes give elements a reusable name.</h3>
+            <p>CSS and JavaScript need a way to find things. A <code>class</code> is normally reusable; an <code>id</code> normally points to one unique element.</p>
+            <div class="compare-grid">
+              <div><span class="compare-label">Reusable</span><h4>class</h4><code>class="card"</code><p>Use it on 1, 5, or 50 cards.</p><small>CSS finds it with <b>.card</b></small></div>
+              <div><span class="compare-label">Unique</span><h4>id</h4><code>id="search"</code><p>Use it for one specific search box.</p><small>CSS finds it with <b>#search</b></small></div>
+            </div>
+            <div class="code-card" data-example="classes">
+              <div class="code-toolbar"><span>HTML</span><button class="copy-code" type="button">Copy</button></div>
+              <pre><code>&lt;div class="card"&gt;First card&lt;/div&gt;
+&lt;div class="card"&gt;Second card&lt;/div&gt;
+
+&lt;button id="saveButton"&gt;Save&lt;/button&gt;</code></pre>
+              <button class="run-example" type="button">Run example <span>↗</span></button>
+            </div>
+          </div>
+        </article>
+
+        <article class="lesson reveal" id="lesson-5" data-search-title="forms input label textarea select checkbox email password placeholder">
+          <div class="lesson-number">05</div>
+          <div class="lesson-copy">
+            <p class="lesson-kicker">Input</p>
+            <h3>Let the visitor type and choose.</h3>
+            <p>Forms hold inputs. The browser already gives you text boxes, checkboxes, sliders, date pickers and more.</p>
+            <div class="mini-form" aria-label="Example form">
+              <label>Project name<input type="text" placeholder="My cool website"></label>
+              <label>Type<select><option>Website</option><option>App</option><option>Game mod</option></select></label>
+              <label class="check-row"><input type="checkbox" checked><span>Enable smooth animations</span></label>
+            </div>
+            <div class="code-card" data-example="forms">
+              <div class="code-toolbar"><span>HTML</span><button class="copy-code" type="button">Copy</button></div>
+              <pre><code>&lt;form&gt;
+  &lt;label&gt;
+    Project name
+    &lt;input type="text" placeholder="My website"&gt;
+  &lt;/label&gt;
+
+  &lt;button type="submit"&gt;Create&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+              <button class="run-example" type="button">Run example <span>↗</span></button>
+            </div>
+          </div>
+        </article>
+
+        <article class="lesson reveal" id="lesson-6" data-search-title="CSS stylesheet link style class color padding margin border radius flexbox">
+          <div class="lesson-number">06</div>
+          <div class="lesson-copy">
+            <p class="lesson-kicker">Make it look good</p>
+            <h3>CSS styles your HTML.</h3>
+            <p>HTML says “this is a card.” CSS says “make that card white, rounded, and spaced nicely.” Connect <code>style.css</code> inside the page's <code>&lt;head&gt;</code>.</p>
+            <div class="code-pair">
+              <div class="code-card compact">
+                <div class="code-toolbar"><span>HTML</span><button class="copy-code" type="button">Copy</button></div>
+                <pre><code>&lt;link rel="stylesheet" href="style.css"&gt;
+
+&lt;div class="card"&gt;Hello&lt;/div&gt;</code></pre>
+              </div>
+              <div class="code-card compact">
+                <div class="code-toolbar"><span>CSS</span><button class="copy-code" type="button">Copy</button></div>
+                <pre><code>.card {
+  padding: 24px;
+  background: white;
+  border-radius: 20px;
+}</code></pre>
+              </div>
+            </div>
+            <div class="box-model">
+              <span class="margin-label">margin — outside</span>
+              <div class="border-box"><span>border</span><div class="padding-box"><span>padding — inside</span><div class="content-box">content</div></div></div>
+            </div>
+            <div class="plain-note"><strong>Remember this one:</strong> <code>padding</code> is space inside the element. <code>margin</code> is space outside it.</div>
+          </div>
+        </article>
+
+        <article class="lesson reveal" id="lesson-7" data-search-title="JavaScript script click event listener querySelector textContent interactive button">
+          <div class="lesson-number">07</div>
+          <div class="lesson-copy">
+            <p class="lesson-kicker">Make it respond</p>
+            <h3>JavaScript adds behavior.</h3>
+            <p>You don't need JavaScript to learn HTML. But this tiny example explains what AI is doing when it makes a button actually work.</p>
+            <div class="event-flow" aria-label="JavaScript event flow">
+              <div><span>1</span><strong>Find</strong><small>the button</small></div><b>→</b>
+              <div><span>2</span><strong>Listen</strong><small>for a click</small></div><b>→</b>
+              <div><span>3</span><strong>Change</strong><small>the page</small></div>
+            </div>
+            <div class="code-card" data-example="javascript">
+              <div class="code-toolbar"><span>JavaScript</span><button class="copy-code" type="button">Copy</button></div>
+              <pre><code>const button = document.querySelector("#helloButton");
+
+button.addEventListener("click", () =&gt; {
+  button.textContent = "It worked ✨";
+});</code></pre>
+              <button class="js-demo-button" id="helloButton" type="button">Click me</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="lesson reveal" id="lesson-8" data-search-title="debug developer tools inspect console errors ai fix bugs">
+          <div class="lesson-number">08</div>
+          <div class="lesson-copy">
+            <p class="lesson-kicker">When it breaks</p>
+            <h3>Errors are clues, not doom.</h3>
+            <p>Press <kbd>F12</kbd> in your browser. The two tabs beginners should care about first are <strong>Elements</strong> and <strong>Console</strong>.</p>
+            <div class="debug-grid">
+              <div><span class="debug-icon">⌖</span><h4>Elements</h4><p>Click anything on the page. See its HTML and CSS. Change styles live without saving.</p></div>
+              <div><span class="debug-icon">›_</span><h4>Console</h4><p>See JavaScript errors and print values with <code>console.log()</code>.</p></div>
+            </div>
+            <div class="ai-prompt-card">
+              <div class="prompt-top"><span>Better AI debugging prompt</span><button class="copy-prompt" type="button">Copy</button></div>
+              <p>Before changing my code, explain the error in beginner-friendly terms. Tell me the exact file and line causing it, why it happens, and then make the smallest possible fix. Do not rewrite unrelated code.</p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="playground-section" id="playground">
+      <div class="section-shell">
+        <div class="chapter-heading centered reveal">
+          <p class="eyebrow">Live playground</p>
+          <h2>Change it. Break it.<br>See what happens.</h2>
+          <p>The safest way to learn code is to touch it. Edit the HTML or CSS and the preview updates instantly.</p>
+        </div>
+
+        <div class="playground reveal">
+          <div class="playground-editor">
+            <div class="editor-tabs" role="tablist" aria-label="Playground files">
+              <button class="editor-tab active" id="htmlTab" type="button" role="tab" aria-selected="true">index.html</button>
+              <button class="editor-tab" id="cssTab" type="button" role="tab" aria-selected="false">style.css</button>
+              <button class="reset-code" id="resetPlayground" type="button">Reset</button>
+            </div>
+            <div class="editor-wrap">
+              <span class="line-numbers" id="lineNumbers" aria-hidden="true"></span>
+              <textarea id="htmlEditor" spellcheck="false" aria-label="HTML editor">&lt;div class="profile"&gt;
+  &lt;p class="eyebrow"&gt;My first card&lt;/p&gt;
+  &lt;h1&gt;Hello, I'm learning HTML.&lt;/h1&gt;
+  &lt;p&gt;And I can actually tell what this code does now.&lt;/p&gt;
+  &lt;button&gt;Nice&lt;/button&gt;
+&lt;/div&gt;</textarea>
+              <textarea id="cssEditor" class="hidden" spellcheck="false" aria-label="CSS editor">body {
+  font-family: system-ui, sans-serif;
+  padding: 40px;
+  background: #f5f5f7;
+  color: #1d1d1f;
+}
+
+.profile {
+  max-width: 420px;
+  padding: 28px;
+  background: white;
+  border-radius: 24px;
+}
+
+.eyebrow { color: #6e6e73; }
+button { padding: 10px 16px; }</textarea>
+            </div>
+          </div>
+          <div class="playground-preview">
+            <div class="preview-bar"><span></span><span></span><span></span><p>Preview</p></div>
+            <iframe id="livePreview" title="Live playground preview" sandbox="allow-scripts"></iframe>
+          </div>
+        </div>
+        <div class="try-row reveal" aria-label="Ideas to try">
+          <span>Try changing:</span>
+          <button type="button" data-insert="background">the background</button>
+          <button type="button" data-insert="radius">border-radius</button>
+          <button type="button" data-insert="text">the heading</button>
+          <button type="button" data-insert="break">break a tag 👀</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-section section-shell" id="project">
+      <div class="project-copy reveal">
+        <p class="eyebrow">Your first real build</p>
+        <h2>Make a profile card.<br>Without asking AI first.</h2>
+        <p>You already know enough. Build the structure yourself, then use AI only when you hit something you don't understand.</p>
+        <div class="project-checklist" id="projectChecklist">
+          <label><input type="checkbox"><span>Add a main <code>&lt;h1&gt;</code> heading</span></label>
+          <label><input type="checkbox"><span>Add a short <code>&lt;p&gt;</code> description</span></label>
+          <label><input type="checkbox"><span>Add an <code>&lt;img&gt;</code> with useful alt text</span></label>
+          <label><input type="checkbox"><span>Add a real <code>&lt;button&gt;</code></span></label>
+          <label><input type="checkbox"><span>Wrap it in a <code>div.profile-card</code></span></label>
+        </div>
+        <div class="project-progress"><div><span id="projectProgressBar"></span></div><p><strong id="projectProgressText">0%</strong> complete</p></div>
+      </div>
+      <div class="project-card-preview reveal" aria-label="Example finished profile card">
+        <div class="fake-profile">
+          <div class="avatar-orbit"><div class="avatar">P</div></div>
+          <span class="tiny-label">Profile</span>
+          <h3>Plodroid</h3>
+          <p>I build websites, apps and Minecraft stuff while learning how the code actually works.</p>
+          <button type="button">View projects</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="rules-section">
+      <div class="section-shell">
+        <div class="chapter-heading centered reveal"><p class="eyebrow">AI without the dependency</p><h2>Keep the speed.<br>Gain the skill.</h2></div>
+        <div class="rules-grid">
+          <article class="rule reveal"><span>01</span><h3>Explain before fixing.</h3><p>Make AI tell you why it broke before it changes anything.</p></article>
+          <article class="rule reveal"><span>02</span><h3>Smallest change possible.</h3><p>Don't let a two-line bug turn into a 2,000-line rewrite.</p></article>
+          <article class="rule reveal"><span>03</span><h3>Predict, then test.</h3><p>Guess what a line does, change it, refresh, and check whether you were right.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="finish section-shell reveal">
+      <p class="eyebrow">You're ready</p>
+      <h2>Now go make<br>something yours.</h2>
+      <p>You do not need to memorize HTML. You need to recognize the pieces, understand the structure, and know how to experiment when you're unsure.</p>
+      <a class="button button-primary" href="#playground">Keep experimenting</a>
+    </section>
+  </main>
+
+  <footer>
+    <div class="section-shell footer-inner">
+      <div><strong>&lt;/&gt; HTML Guide</strong><p>Built for people who started by coding with AI.</p></div>
+      <a href="https://github.com/plodroid/html-guide" target="_blank" rel="noreferrer">View source on GitHub ↗</a>
+    </div>
+  </footer>
+
+  <dialog class="search-dialog" id="searchDialog">
+    <div class="search-panel glass-control">
+      <div class="search-input-wrap">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m21 21-4.35-4.35m2.35-5.65a8 8 0 1 1-16 0 8 8 0 0 1 16 0Z"/></svg>
+        <input id="lessonSearch" type="search" placeholder="Search tags, forms, CSS…" autocomplete="off" aria-label="Search lessons">
+        <kbd>ESC</kbd>
+      </div>
+      <div class="search-results" id="searchResults"></div>
+    </div>
+  </dialog>
+
+  <dialog class="example-dialog" id="exampleDialog">
+    <div class="example-panel">
+      <div class="example-header"><div><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div><strong>Live example</strong><button id="closeExample" type="button" aria-label="Close example">×</button></div>
+      <iframe id="exampleFrame" title="Example output" sandbox="allow-scripts allow-popups"></iframe>
+    </div>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite">Copied</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
