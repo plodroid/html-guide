@@ -3,213 +3,217 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Learn HTML by writing real code, completing missions and building a website from zero.">
+  <meta name="description" content="CodeBloom teaches complete beginners ages 8–14 how websites, programs, and GitHub work — one tiny lesson at a time.">
   <meta name="theme-color" content="#f5f5f7">
-  <title>HTML Guide — Learn by building</title>
+  <title>CodeBloom — Learn coding from zero</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <svg class="filter-defs" aria-hidden="true" width="0" height="0">
-    <defs>
-      <filter id="glass-distortion" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB">
-        <feTurbulence type="fractalNoise" baseFrequency="0.008 0.014" numOctaves="1" seed="17" result="noise"/>
-        <feGaussianBlur in="noise" stdDeviation="1.6" result="softMap"/>
-        <feDisplacementMap in="SourceGraphic" in2="softMap" scale="14" xChannelSelector="R" yChannelSelector="G"/>
-      </filter>
-      <filter id="goo" x="-40%" y="-40%" width="180%" height="180%">
-        <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="blur"/>
-        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 16 -8" result="goo"/>
-        <feComposite in="SourceGraphic" in2="goo" operator="atop"/>
-      </filter>
-      <filter id="mini-liquid-lens" x="-50%" y="-50%" width="200%" height="200%">
-        <feTurbulence type="fractalNoise" baseFrequency="0.018" numOctaves="1" seed="8" result="map"/>
-        <feGaussianBlur in="map" stdDeviation="2" result="soft"/>
-        <feDisplacementMap in="SourceGraphic" in2="soft" scale="10" xChannelSelector="R" yChannelSelector="G"/>
-      </filter>
-    </defs>
-  </svg>
-
   <a class="skip-link" href="#main">Skip to learning</a>
 
-  <header class="site-header" id="topbar">
-    <nav class="nav-glass liquid-surface" aria-label="Main navigation">
-      <a class="brand" href="#top"><span class="brand-glyph">&lt;/&gt;</span><span>HTML Guide</span></a>
-      <div class="nav-links">
-        <a href="#journey">Learn</a>
-        <a href="#arena">Practice</a>
-        <a href="#playground">Playground</a>
+  <header class="topbar">
+    <nav class="nav glass" aria-label="Main navigation">
+      <a class="brand" href="#top" aria-label="CodeBloom home">
+        <span class="brand-mark" aria-hidden="true">&lt;/&gt;</span>
+        <span>CodeBloom</span>
+      </a>
+      <div class="nav-links" aria-label="Sections">
+        <a href="#tracks">Courses</a>
+        <a href="#lab">Code Lab</a>
+        <a href="#reference">Reference</a>
+        <a href="#github">GitHub</a>
       </div>
-      <div class="nav-right">
-        <button class="progress-capsule" id="profileButton" type="button" aria-label="Open your progress">
-          <span class="progress-mini-track"><i id="navCourseBar"></i></span>
-          <span><b id="navProgress">0%</b><small id="navXp">0 XP</small></span>
+      <div class="nav-actions">
+        <button class="icon-button" id="themeToggle" type="button" aria-label="Toggle appearance">◐</button>
+        <button class="progress-pill" id="progressButton" type="button" aria-label="Open progress summary">
+          <span class="progress-ring" id="progressRing" aria-hidden="true"><span id="progressPercent">0%</span></span>
+          <span class="progress-pill-copy"><strong id="navXp">0 XP</strong><small>your progress</small></span>
         </button>
-        <button class="menu-button" id="menuButton" type="button" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+        <button class="menu-button" id="menuButton" type="button" aria-label="Open menu" aria-expanded="false">☰</button>
       </div>
     </nav>
-    <div class="page-progress" aria-hidden="true"><span id="pageProgress"></span></div>
+    <div class="mobile-menu glass" id="mobileMenu" hidden>
+      <a href="#tracks">Courses</a>
+      <a href="#lab">Code Lab</a>
+      <a href="#reference">Reference</a>
+      <a href="#github">GitHub</a>
+    </div>
   </header>
-
-  <div class="mobile-menu liquid-surface" id="mobileMenu" aria-hidden="true">
-    <a href="#journey">Learn</a><a href="#arena">Practice</a><a href="#playground">Playground</a><a href="#rewards">Achievements</a>
-  </div>
 
   <main id="main">
     <section class="hero shell" id="top">
       <div class="hero-copy reveal">
-        <p class="kicker">A beginner course you can touch.</p>
-        <h1>Learn HTML<br>by making things.</h1>
-        <p class="hero-lede">No giant lectures. Write a little code, see what it does, fix what breaks, and keep moving.</p>
+        <p class="eyebrow">Coding, explained like you’re actually new.</p>
+        <h1>Start at zero.<br><span>Build real things.</span></h1>
+        <p class="hero-lede">A calm, hands-on coding course for ages 8–14. Learn what each line means, try it yourself, and unlock the next step only when it makes sense.</p>
         <div class="hero-actions">
-          <button class="primary-button liquid-press" id="continueButton" type="button">Start learning <span>→</span></button>
-          <a class="text-link" href="#journey">See the path <span>↓</span></a>
+          <button class="primary-button" id="startButton" type="button">Start your first lesson <span>→</span></button>
+          <a class="secondary-link" href="#tracks">Explore all courses</a>
         </div>
-        <p class="hero-note">Free · no account · progress stays in your browser</p>
-      </div>
-
-      <div class="hero-progress reveal" aria-label="Course progress">
-        <div class="progress-heading"><span>YOUR COURSE</span><strong id="heroCoursePercent">0%</strong></div>
-        <div class="liquid-progress" id="courseProgressTrack" style="--progress:0">
-          <div class="liquid-progress-fill"></div>
-          <div class="liquid-progress-thumb" id="courseProgressThumb"><span class="thumb-filter"></span><span class="thumb-overlay"></span><span class="thumb-specular"></span></div>
-        </div>
-        <div class="progress-meta"><span id="heroMissionCount">0 of 19 missions</span><span id="heroLevel">Level 1</span></div>
-        <div class="resume-line">
-          <div><span>NEXT</span><strong id="nextMissionTitle">Meet your first tag</strong><small id="nextMissionMeta">2 min · 40 XP</small></div>
-          <button class="round-button liquid-press" id="nextMissionPlay" type="button" aria-label="Start next mission">→</button>
+        <div class="hero-meta" aria-label="Course highlights">
+          <span>✓ No account</span><span>✓ No setup</span><span>✓ Saves on this device</span>
         </div>
       </div>
-    </section>
 
-    <section class="principles shell reveal" aria-label="How the course works">
-      <div><span>01</span><strong>See it.</strong><p>One concept, explained plainly.</p></div>
-      <div><span>02</span><strong>Use it.</strong><p>Edit real code immediately.</p></div>
-      <div><span>03</span><strong>Keep it.</strong><p>Challenges make the idea stick.</p></div>
-    </section>
-
-    <section class="journey shell" id="journey">
-      <div class="section-intro reveal">
-        <p class="kicker">The course</p>
-        <h2>Small steps. Real progress.</h2>
-        <p>The path only unlocks when you can actually use the thing you just learned.</p>
-      </div>
-
-      <div class="world-switch liquid-surface reveal" role="tablist" aria-label="Course worlds">
-        <button class="world-tab active" type="button" data-world="html" role="tab" aria-selected="true"><span>&lt;&gt;</span> HTML</button>
-        <button class="world-tab" type="button" data-world="css" role="tab" aria-selected="false"><span>#</span> CSS</button>
-        <button class="world-tab" type="button" data-world="js" role="tab" aria-selected="false"><span>{ }</span> JavaScript</button>
-      </div>
-
-      <div class="world-summary reveal">
-        <div><span id="worldNumber">WORLD 1</span><h3 id="worldTitle">HTML Foundations</h3><p id="worldDescription">Build the skeleton of the web from absolute zero.</p></div>
-        <div class="world-percent"><strong id="worldProgressPercent">0%</strong><span>complete</span></div>
-      </div>
-      <div class="mission-rail reveal" id="questPath" aria-label="Mission path"></div>
-    </section>
-
-    <section class="daily shell reveal" aria-labelledby="dailyTitle">
-      <div class="daily-title"><p class="kicker">Today</p><h2 id="dailyTitle">A tiny reason to come back.</h2></div>
-      <div class="daily-list">
-        <div class="daily-item"><span class="daily-dot"></span><div><strong>Finish two missions</strong><small><b id="dailyMissionProgress">0</b>/2 today</small></div><span>+50 XP</span></div>
-        <div class="daily-item"><span class="daily-dot"></span><div><strong>Keep your streak</strong><small><b id="heroStreak">1</b> day streak</small></div><span>🔥</span></div>
-        <div class="daily-item"><span class="daily-dot"></span><div><strong>Find the hidden comment</strong><small>Somewhere in Free Play.</small></div><span>?</span></div>
-      </div>
-    </section>
-
-    <section class="practice" id="arena">
-      <div class="shell practice-grid">
-        <div class="practice-copy reveal">
-          <p class="kicker light">Practice</p>
-          <h2>Change the code.<br>Make it true.</h2>
-          <p>The browser updates while you type. No guessing whether you understood it.</p>
-          <div class="combo-line"><span>Current combo</span><strong id="comboValue">x1</strong></div>
-        </div>
-        <div class="code-workbench reveal">
-          <div class="challenge-head"><span id="arenaTitle">Give the page a real heading</span><small id="arenaInstruction">Change the paragraph into an h1.</small></div>
-          <div class="workbench-grid">
-            <div class="editor-pane"><div class="pane-bar"><span>index.html</span><div><button id="arenaHint" type="button">Hint</button><button id="arenaReset" type="button">Reset</button></div></div><textarea id="arenaCode" spellcheck="false" aria-label="Challenge code"></textarea></div>
-            <div class="preview-pane"><div class="pane-bar"><span>Browser</span><span>LIVE</span></div><iframe id="arenaPreview" title="Challenge preview" sandbox="allow-same-origin"></iframe></div>
+      <div class="hero-demo reveal" aria-label="Interactive coding example">
+        <div class="demo-window">
+          <div class="window-bar">
+            <div class="traffic-lights" aria-hidden="true"><i></i><i></i><i></i></div>
+            <span>hello.html</span>
+            <span class="live-dot">LIVE</span>
           </div>
-          <div class="check-row"><div class="arena-feedback" id="arenaFeedback" aria-live="polite"><span></span><p>Make your change, then check it.</p></div><button class="check-button liquid-press" id="checkArena" type="button">Check code <span>⌘↵</span></button></div>
+          <div class="demo-code" aria-hidden="true">
+            <span><b class="syntax-tag">&lt;h1&gt;</b>Hello!<b class="syntax-tag">&lt;/h1&gt;</b></span>
+            <span><b class="syntax-tag">&lt;p&gt;</b>I made this.<b class="syntax-tag">&lt;/p&gt;</b></span>
+            <span><b class="syntax-tag">&lt;button&gt;</b>Click me<b class="syntax-tag">&lt;/button&gt;</b></span>
+          </div>
+          <div class="demo-result">
+            <small>WHAT THE BROWSER SEES</small>
+            <h3>Hello!</h3>
+            <p>I made this.</p>
+            <button type="button">Click me</button>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="quickfire shell reveal">
-      <div class="quickfire-copy"><p class="kicker">Quickfire</p><h2>Train your eyes.</h2><p>Short recognition questions between coding sessions.</p><div class="quick-stats"><span><b id="qfScore">0</b> correct</span><span><b id="qfCombo">x1</b> combo</span></div></div>
-      <div class="quiz-panel"><div class="quiz-top"><span id="quizCounter">Question 1</span><button id="newQuiz" type="button">New question ↻</button></div><h3 id="quizQuestion">Which tag creates the main heading?</h3><div id="quizOptions" class="quiz-options"></div><p id="quizResult" class="quiz-result" aria-live="polite">Pick an answer.</p></div>
+    <section class="proof-strip shell reveal" aria-label="How learning works">
+      <article><span>1</span><div><strong>Learn one idea.</strong><p>No giant walls of text.</p></div></article>
+      <article><span>2</span><div><strong>See why it works.</strong><p>Every symbol gets explained.</p></div></article>
+      <article><span>3</span><div><strong>Change real code.</strong><p>Practice immediately.</p></div></article>
+      <article><span>4</span><div><strong>Build something.</strong><p>Turn lessons into projects.</p></div></article>
     </section>
 
-    <section class="rewards shell" id="rewards">
-      <div class="section-intro reveal"><p class="kicker">Achievements</p><h2>Milestones, not loot boxes.</h2><p>These unlock because you learned something or kept going — not because you clicked a shiny thing.</p></div>
-      <div class="reward-shelf reveal" id="rewardShelf"></div>
+    <section class="continue-section shell reveal" id="continueSection">
+      <div class="section-heading split-heading">
+        <div><p class="eyebrow">Continue learning</p><h2 id="continueTitle">Your first mission is ready.</h2></div>
+        <button class="text-button" id="resetProgress" type="button">Reset progress</button>
+      </div>
+      <button class="continue-card" id="continueCard" type="button">
+        <span class="course-badge" id="continueBadge">HTML</span>
+        <span class="continue-copy"><small id="continueStep">Lesson 1 of 8</small><strong id="continueLesson">What even is HTML?</strong><span id="continueDescription">Meet the language that gives a webpage its structure.</span></span>
+        <span class="continue-go">→</span>
+      </button>
     </section>
 
-    <section class="playground shell" id="playground">
-      <div class="section-intro reveal"><p class="kicker">Free Play</p><h2>Break it on purpose.</h2><p>Change anything. The preview is disposable. Curiosity is the point.</p></div>
-      <div class="playground-shell reveal">
-        <div class="playground-toolbar">
-          <div class="code-tabs liquid-surface"><button class="code-tab active" type="button" data-code-tab="html">HTML</button><button class="code-tab" type="button" data-code-tab="css">CSS</button></div>
-          <div><button id="formatPlayground" type="button">Reset</button><button id="surpriseMe" type="button">Surprise me</button></div>
+    <section class="tracks shell" id="tracks">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Learning paths</p>
+        <h2>Pick a language. Start from nothing.</h2>
+        <p>You do not need to know what a variable, function, terminal, compiler, or tag is yet. That’s literally the point.</p>
+      </div>
+      <div class="track-toolbar glass reveal" role="toolbar" aria-label="Course filters">
+        <button class="filter-chip active" type="button" data-filter="all">All</button>
+        <button class="filter-chip" type="button" data-filter="web">Web</button>
+        <button class="filter-chip" type="button" data-filter="programming">Programming</button>
+        <button class="filter-chip" type="button" data-filter="tools">Tools</button>
+      </div>
+      <div class="track-grid" id="trackGrid" aria-live="polite"></div>
+    </section>
+
+    <section class="lab-section" id="lab">
+      <div class="shell">
+        <div class="section-heading light reveal">
+          <p class="eyebrow">Code Lab</p>
+          <h2>Touch the code. See what changes.</h2>
+          <p>HTML, CSS, and JavaScript run live in your browser. Other languages use guided output exercises so you can learn the logic before installing tools.</p>
         </div>
-        <div class="playground-grid">
-          <div class="play-editor"><textarea id="htmlEditor" class="editor-area active" data-editor="html" spellcheck="false" aria-label="HTML playground editor">&lt;main class="card"&gt;
-  &lt;p class="tiny"&gt;My first page&lt;/p&gt;
-  &lt;h1&gt;Hello, web!&lt;/h1&gt;
-  &lt;p&gt;I can change this code myself.&lt;/p&gt;
-  &lt;button&gt;Nice.&lt;/button&gt;
-&lt;/main&gt;</textarea><textarea id="cssEditor" class="editor-area" data-editor="css" spellcheck="false" aria-label="CSS playground editor">body {
-  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-  display: grid;
-  place-items: center;
-  min-height: 100vh;
-  margin: 0;
-  background: #f5f5f7;
-}
-.card {
-  width: min(420px, 80%);
-  padding: 32px;
-  border-radius: 24px;
-  background: white;
-}</textarea></div>
-          <div class="play-preview"><div class="pane-bar"><span>Live page</span><span>LIVE</span></div><iframe id="playgroundFrame" title="Playground preview" sandbox="allow-same-origin"></iframe></div>
+        <div class="lab glass-dark reveal">
+          <div class="lab-toolbar">
+            <div class="segmented" id="labLanguageTabs" role="tablist" aria-label="Code Lab language"></div>
+            <div class="lab-actions"><button id="labReset" type="button">Reset</button><button id="labRun" class="run-button" type="button">Run ▶</button></div>
+          </div>
+          <div class="lab-body">
+            <div class="editor-panel">
+              <div class="panel-title"><span id="labFilename">index.html</span><small id="labHint">Try changing the heading.</small></div>
+              <textarea id="labEditor" spellcheck="false" aria-label="Code editor"></textarea>
+            </div>
+            <div class="output-panel">
+              <div class="panel-title"><span id="outputLabel">Preview</span><small>your result</small></div>
+              <iframe id="webPreview" title="Live webpage preview" sandbox="allow-scripts"></iframe>
+              <pre id="textOutput" hidden aria-live="polite"></pre>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="final-section">
-      <div class="shell final-grid reveal"><div><p class="kicker light">Final build</p><h2>Start with a blank file.</h2><p>Clear the HTML path, then build a small landing page without copying a template.</p><button class="primary-button inverse liquid-press" id="finalBossButton" type="button" disabled>Locked · finish HTML first</button></div><div class="final-checklist"><span>THE BRIEF</span><ol><li>semantic page structure</li><li>a real navigation link</li><li>an image with useful alt text</li><li>a form control</li></ol><div id="bossLock" class="boss-lock">Locked</div></div></div>
+    <section class="reference shell" id="reference">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Beginner reference</p>
+        <h2>“Wait, what does that code do again?”</h2>
+        <p>Search the important building blocks. Each card explains what it is, when to use it, and a tiny example.</p>
+      </div>
+      <div class="reference-controls reveal">
+        <label class="search-box glass" for="referenceSearch"><span aria-hidden="true">⌕</span><input id="referenceSearch" type="search" placeholder="Search tags, loops, functions, arrays…" autocomplete="off"></label>
+        <select id="referenceLanguage" aria-label="Filter reference by language"><option value="all">All languages</option></select>
+      </div>
+      <div class="reference-grid" id="referenceGrid"></div>
+    </section>
+
+    <section class="github-section shell" id="github">
+      <div class="github-card reveal">
+        <div class="github-copy">
+          <p class="eyebrow">GitHub without the scary bits</p>
+          <h2>Your code deserves a home.</h2>
+          <p>Learn repositories, files, commits, branches, README files, and GitHub Pages with tiny visual lessons. No command line required at the start.</p>
+          <button class="primary-button dark-button" id="githubStart" type="button">Learn GitHub basics <span>→</span></button>
+        </div>
+        <div class="repo-visual" aria-hidden="true">
+          <div class="repo-top"><span>my-first-website</span><b>Public</b></div>
+          <div class="repo-file"><span>▣</span><strong>index.html</strong><small>Make my first page</small></div>
+          <div class="repo-file"><span>#</span><strong>style.css</strong><small>Add some style</small></div>
+          <div class="repo-file"><span>◆</span><strong>README.md</strong><small>Explain the project</small></div>
+          <div class="commit-line"><span>✓</span><div><strong>3 commits</strong><small>Each one is a saved checkpoint.</small></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="projects shell">
+      <div class="section-heading reveal"><p class="eyebrow">After the lessons</p><h2>Build stuff you can actually show people.</h2></div>
+      <div class="project-grid reveal">
+        <article><span>01 · HTML + CSS</span><h3>Your own profile card</h3><p>Headings, images, links, spacing, colors, and responsive layout.</p><small>Beginner · ~30 min</small></article>
+        <article><span>02 · JavaScript</span><h3>Click counter game</h3><p>Variables, buttons, events, conditions, and updating the page.</p><small>Beginner · ~45 min</small></article>
+        <article><span>03 · Python</span><h3>Mini guessing game</h3><p>Input, numbers, if statements, loops, and functions.</p><small>Beginner · ~45 min</small></article>
+        <article><span>04 · GitHub</span><h3>Publish your first site</h3><p>Repository, files, commits, and GitHub Pages — no Actions workflow needed.</p><small>Beginner · ~20 min</small></article>
+      </div>
     </section>
   </main>
 
-  <footer class="footer shell"><span>HTML Guide</span><p>Built for people starting from zero.</p></footer>
+  <footer class="footer shell">
+    <a class="brand footer-brand" href="#top"><span class="brand-mark">&lt;/&gt;</span><span>CodeBloom</span></a>
+    <p>Made for beginners who haven’t learned the weird words yet.</p>
+    <a href="#top">Back to top ↑</a>
+  </footer>
 
-  <dialog class="mission-dialog" id="missionDialog">
-    <div class="mission-sheet">
-      <button class="close-button" id="closeMission" type="button" aria-label="Close mission">×</button>
-      <div class="mission-topline"><span id="missionXpPill">+40 XP</span><div class="mission-bar"><i id="missionProgressBar"></i></div></div>
-      <div id="missionIntro" class="mission-intro"></div>
-      <div id="missionLesson" class="mission-lesson"></div>
-      <div id="missionTask" class="mission-task"></div>
-      <div class="mission-actions"><button id="missionHint" type="button">Give me a hint</button><button class="primary-button liquid-press" id="missionCheck" type="button">Check answer</button></div>
+  <dialog class="lesson-dialog" id="lessonDialog">
+    <div class="lesson-shell">
+      <div class="lesson-sidebar">
+        <button class="close-button" id="closeLesson" type="button" aria-label="Close lesson">×</button>
+        <span class="lesson-language" id="lessonLanguage">HTML</span>
+        <small id="lessonPosition">Lesson 1 of 8</small>
+        <div class="lesson-progress"><i id="lessonProgressBar"></i></div>
+        <nav id="lessonSteps" aria-label="Lesson sections"></nav>
+      </div>
+      <div class="lesson-content" id="lessonContent" tabindex="-1"></div>
     </div>
   </dialog>
 
-  <dialog class="profile-dialog" id="profileDialog">
-    <div class="profile-sheet">
-      <button class="close-button" id="closeProfile" type="button" aria-label="Close progress">×</button>
-      <p class="kicker">Your progress</p><h2 id="profileHeading">Learner</h2>
-      <div class="profile-progress-number"><strong id="profileCoursePercent">0%</strong><span>course complete</span></div>
-      <div class="profile-progress-track"><i id="profileCourseBar"></i></div>
-      <div class="profile-stats"><div><strong id="profileXp">0</strong><span>XP</span></div><div><strong id="profileCompleted">0</strong><span>Missions</span></div><div><strong id="profileStreak">1</strong><span>Streak</span></div></div>
-      <label class="name-field"><span>Nickname</span><input id="profileNameInput" maxlength="24" autocomplete="nickname" placeholder="Learner"></label>
-      <div class="profile-actions"><button id="resetProgress" type="button" class="danger-text">Reset progress</button><button id="saveProfile" type="button" class="primary-button liquid-press">Save</button></div>
+  <dialog class="progress-dialog" id="progressDialog">
+    <div class="progress-sheet">
+      <button class="close-button" id="closeProgress" type="button" aria-label="Close progress">×</button>
+      <p class="eyebrow">Your progress</p>
+      <h2>Every tiny lesson counts.</h2>
+      <div class="big-progress"><strong id="progressBigPercent">0%</strong><span>of the full beginner path</span></div>
+      <div class="progress-track"><i id="progressBigBar"></i></div>
+      <div class="stats-row"><div><strong id="progressXp">0</strong><span>XP</span></div><div><strong id="progressLessons">0</strong><span>Lessons</span></div><div><strong id="progressCourses">0</strong><span>Courses started</span></div></div>
+      <div class="course-progress-list" id="courseProgressList"></div>
     </div>
   </dialog>
 
-  <dialog class="reward-dialog" id="rewardDialog"><div class="reward-sheet"><div class="reward-burst">◆</div><p class="kicker">Achievement unlocked</p><h2 id="rewardTitle">First Steps</h2><p id="rewardDescription">You completed your first mission.</p><button class="primary-button liquid-press" id="claimReward" type="button">Nice</button></div></dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-  <div class="toast liquid-surface" id="toast" role="status" aria-live="polite"></div>
-  <script src="script.js"></script>
+  <script src="curriculum.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>

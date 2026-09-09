@@ -1,90 +1,80 @@
-# HTML Guide
+# CodeBloom
 
-A beginner-first interactive course for learning HTML by actually writing it.
+A beginner-first coding website for ages **8–14**. It assumes the learner knows absolutely nothing about programming vocabulary yet.
 
-The site is designed to feel closer to an Apple product/learning experience than a generic gamified dashboard: editorial typography, lots of whitespace, restrained motion, mostly solid surfaces, and Liquid Glass reserved for controls where the material actually makes sense.
+The project is a static site built with plain HTML, CSS, and JavaScript so it can be hosted directly with **GitHub Pages**. There is **no GitHub Actions workflow**, build step, npm dependency, framework, backend, or account system.
 
-## Learning loop
+## Courses
 
-Each mission keeps the same simple rhythm:
+- HTML
+- CSS
+- JavaScript
+- Python
+- C
+- C++
+- C#
+- GitHub basics
 
-1. Learn one small idea.
-2. See a tiny real example.
-3. Change real code yourself.
-4. Get immediate validation and an optional hint.
-5. Unlock the next step only after the code satisfies the task.
+Every lesson introduces one idea at a time, explains every symbol or concept it introduces, shows a real example, then gives the learner a small code-editing challenge with a hint and local progress tracking.
 
-The curriculum currently contains 19 main missions across HTML, CSS, and JavaScript, plus a final build.
+The searchable beginner reference covers important tags, CSS properties, programming structures, functions/methods, collections, and GitHub concepts. It is intentionally a beginner reference rather than an attempt to dump entire language standard libraries on a child.
 
-## Progress
+## Learning design
 
-Course completion is calculated from the XP value of curriculum missions the learner has actually completed:
+The course uses a simple loop:
 
-```text
-completed curriculum XP / total curriculum XP = course progress %
-```
+1. **Understand it** — plain-language explanation with no assumed vocabulary.
+2. **See it** — a tiny real example and a description of the result.
+3. **Try it** — edit code immediately and check the answer.
+4. **Build it** — finish each path with concepts that combine into small projects.
 
-Side activities can award **bonus XP** for levels and feedback, but bonus XP does not increase the course-completion percentage. This keeps the progress meter honest.
+Progress and XP are stored only in `localStorage` on the learner's device.
 
-Progress, nickname, streaks, achievements, and activity state are stored locally in the browser with `localStorage`. The site does **not** track visitor IP addresses.
+## Code Lab
 
-## Liquid Glass
+HTML, CSS, and JavaScript run live inside sandboxed browser previews.
 
-The interface uses a restrained Liquid Glass system adapted from the supplied reference template:
+Python, C, C++, and C# are presented as guided browser exercises because a plain GitHub Pages site cannot safely provide native compilers/interpreters without adding a remote service or large runtime dependency. The lessons prepare learners to move to local tools later.
 
-- SVG distortion/displacement filters
-- layered translucent material
-- specular edge highlights
-- compressed/stretched press states
-- a glass lens thumb for course progress
-- glass mainly on navigation, segmented controls, transient UI, and compact controls
+## Design system
 
-Content areas themselves remain mostly solid so the material does not overwhelm the learning experience.
+The interface follows the spirit of Apple's Human Interface Guidelines and current Liquid Glass guidance:
 
-The effect degrades gracefully where advanced SVG/backdrop filter combinations are not supported.
-
-## Features
-
-- locked/unlocked mission progression
-- real code validators
-- HTML, CSS and JavaScript worlds
-- boss missions and a final build
-- XP and levels
-- XP-weighted course progress
-- daily learning goal and streak
-- practice arena with combos
-- Quickfire recognition practice
-- achievement milestones
-- hidden playground challenge
-- editable HTML/CSS playground with live preview
-- responsive mobile layout
+- content remains the focus
+- strong information hierarchy
+- restrained use of translucent glass on navigation and controls
+- predictable action placement
+- generous spacing and readable typography
+- adaptive layouts across desktop, tablet, and phone sizes
+- light and dark appearance
 - reduced-motion support
+- keyboard and focus-friendly interactions
 
-## Structure
+It uses the system font stack instead of redistributing Apple font files.
+
+## Files used by the current site
 
 ```text
 html-guide/
 ├─ index.html
 ├─ style.css
-├─ base.css
-├─ components.css
-├─ dialogs.css
-├─ script.js
 ├─ curriculum.js
-├─ progress.js
-├─ activities.js
 ├─ app.js
 └─ README.md
 ```
 
-The files are intentionally split into understandable pieces instead of one enormous generated stylesheet or script.
-
-There is deliberately **no framework, npm dependency, package manager, build step, backend, or GitHub Actions workflow**. It is plain static HTML/CSS/JavaScript.
+Older files from the previous HTML-only version can be removed once this redesign is accepted.
 
 ## Run locally
 
-Open `index.html` in a browser or serve the folder with any basic static-file server.
+Open `index.html` directly, or serve the repository folder using any basic local static server.
 
-## GitHub Pages
+## Publish with GitHub Pages — no Actions
 
-Publish directly from the repository branch in GitHub Pages settings. No custom Actions workflow is required or included.
+1. Open the repository on GitHub.
+2. Go to **Settings → Pages**.
+3. Under **Build and deployment**, choose **Deploy from a branch**.
+4. Select the branch you want to publish (normally `main`) and `/ (root)`.
+5. Save.
+
+GitHub Pages can publish this site directly because all files are static.
